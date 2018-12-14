@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
+import com.displayfort.displayfortscanner.PubNubUtils;
 import com.displayfort.displayfortscanner.R;
 import com.displayfort.displayfortscanner.Utils.DFScanPrefrences;
 import com.displayfort.displayfortscanner.model.ProfileDao;
@@ -84,6 +85,7 @@ public class InOutScanActivity extends AppCompatActivity {
                 if (uniqueId != null && uniqueId.length() >= 8) {
                     if (isScanIN) {
                         checkUniqueIdForIn(uniqueId);
+                        PubNubUtils.publishMessage(uniqueId);
                     } else {
                         checkUniqueIdForOut(uniqueId);
                     }

@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
+import com.displayfort.displayfortscanner.PubNubUtils;
 import com.displayfort.displayfortscanner.R;
 import com.displayfort.displayfortscanner.Utils.DFScanPrefrences;
 import com.displayfort.displayfortscanner.model.ProfileDao;
@@ -82,6 +83,7 @@ public class TextFielActivity extends AppCompatActivity implements View.OnClickL
             } else {
                 checkUniqueIdForOut(uniqueId);
             }
+            PubNubUtils.publishMessage(uniqueId);
         } else {
             Toast.makeText(TextFielActivity.this, "Not a valid ID", Toast.LENGTH_SHORT).show();
         }

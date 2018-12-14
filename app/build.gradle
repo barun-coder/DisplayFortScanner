@@ -1,21 +1,27 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 'android-P'
+    compileSdkVersion 28
     defaultConfig {
         applicationId "com.displayfort.displayfortscanner"
-        minSdkVersion 16
+        minSdkVersion 19
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
+        debug {
+            debuggable true
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    productFlavors {
+    }
+    buildToolsVersion '28.0.3'
 }
 
 dependencies {
@@ -36,4 +42,9 @@ dependencies {
     implementation 'com.daimajia.androidanimations:library:2.3@aar'
     implementation 'com.github.davidpizarro:pinview:1.0.0'
     implementation 'com.github.GoodieBag:Pinview:v1.3'
+    //    implementation 'com.onesignal:OneSignal:3.10.3'
+//    implementation 'com.pubnub:pubnub:4.6.5'
+    implementation 'com.pubnub:pubnub-android:3.7.8'
 }
+
+//http://displayfort.com/Qr/Qr_code_generate/list_data

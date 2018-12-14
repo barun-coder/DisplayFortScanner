@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.displayfort.displayfortscanner.PubNubUtils;
 import com.displayfort.displayfortscanner.R;
 
 public class DashboardActivity extends AppCompatActivity implements View.OnClickListener {
@@ -22,6 +23,7 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         init();
+        PubNubUtils.subscribe();
     }
 
     private void init() {
