@@ -4,7 +4,7 @@
     package="com.displayfort.displayfortscanner">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CAMERA" />
 
     <uses-feature android:name="android.hardware.camera" />
@@ -51,6 +51,13 @@
         <activity
             android:name=".screen.ReportActivity"
             android:label="@string/app_name" />
+        <activity
+            android:name=".screen.PubnubScreenActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".screen.ViewActivity"
+            android:label="@string/app_name"
+          />
     </application>
 
 </manifest>

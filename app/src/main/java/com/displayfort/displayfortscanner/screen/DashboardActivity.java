@@ -66,7 +66,7 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
                 startActivity(intent);
                 break;
             case R.id.report_rl:
-                intent = new Intent(context, ReportActivity.class);
+                intent = new Intent(context, PubnubScreenActivity.class);
                 startActivity(intent);
                 break;
         }

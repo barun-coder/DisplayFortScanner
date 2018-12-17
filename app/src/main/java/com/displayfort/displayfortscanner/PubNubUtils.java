@@ -17,11 +17,15 @@ import org.json.JSONObject;
 public class PubNubUtils {
     private static Pubnub pubNub;
     private static String CHANNEL_NAME = "DF";
+    public static String CHANNEL_NAME_ONE = "DF1";
+    public static String CHANNEL_NAME_TWO = "DF2";
+    public static String CHANNEL_NAME_THREE = "DF3";
+    public static String CHANNEL_NAME_FOUR = "DF4";
 
     public static void subscribe() {
         pubNub = null;
         if (pubNub == null) {
-            pubNub = new Pubnub("pub-c-dce848d6-488b-4fb2-95ff-13f12ca5317f","sub-c-f64970aa-ff6f-11e8-b528-9e80330262eb" );
+            pubNub = new Pubnub("pub-c-dce848d6-488b-4fb2-95ff-13f12ca5317f", "sub-c-f64970aa-ff6f-11e8-b528-9e80330262eb");
 
             try {
                 pubNub.subscribe(CHANNEL_NAME, new Callback() {
@@ -53,7 +57,20 @@ public class PubNubUtils {
                 e.printStackTrace();
             }
         }
+    }
+
+    public static void subscribe(String ChannelName, Callback callback) {
+        pubNub = null;
+        if (pubNub == null) {
+            pubNub = new Pubnub("pub-c-dce848d6-488b-4fb2-95ff-13f12ca5317f", "sub-c-f64970aa-ff6f-11e8-b528-9e80330262eb");
+
+            try {
+                pubNub.subscribe(ChannelName, callback);
+            } catch (PubnubException e) {
+                e.printStackTrace();
             }
+        }
+    }
 
     public static void publishMessage(String UniqueID) {
         if (pubNub != null) {
@@ -77,5 +94,35 @@ public class PubNubUtils {
             });
         }
 
+    }
+
+
+    public static void publishMessage(String ChannelName, String Message, String Type) {
+        if (pubNub != null) {
+            JSONObject messageJsonObject = new JSONObject();
+            try {
+                messageJsonObject.put("Message", Message);
+                messageJsonObject.put("Type", Type);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            pubNub.publish(ChannelName, messageJsonObject, new Callback() {
+                @Override
+                public void successCallbackV2(String channel, Object message, JSONObject envelope) {
+                    super.successCallbackV2(channel, message, envelope);
+                }
+
+                @Override
+                public void errorCallback(String channel, PubnubError error) {
+                    super.errorCallback(channel, error);
+                }
+            });
+        }
+
+    }
+
+    public static void unSubscribeAll() {
+        pubNub.unsubscribeAll();
     }
 }

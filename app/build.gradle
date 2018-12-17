@@ -43,8 +43,15 @@ dependencies {
     implementation 'com.github.davidpizarro:pinview:1.0.0'
     implementation 'com.github.GoodieBag:Pinview:v1.3'
     //    implementation 'com.onesignal:OneSignal:3.10.3'
-//    implementation 'com.pubnub:pubnub:4.6.5'
+    //    implementation 'com.pubnub:pubnub:4.6.5'
     implementation 'com.pubnub:pubnub-android:3.7.8'
+    implementation 'com.github.HaarigerHarald:android-youtubeExtractor:master-SNAPSHOT'
+    implementation 'com.pubnub:pubnub-android:3.7.8'
+    implementation 'com.github.HaarigerHarald:android-youtubeExtractor:master-SNAPSHOT'
+    implementation 'com.github.HaarigerHarald:android-youtubeExtractor:master-SNAPSHOT'
+    implementation 'com.github.Commit451.YouTubeExtractor:youtubeextractor:2.1.0'
+    implementation files('libs/YouTubeAndroidPlayerApi.jar')
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
 }
 
-//http://displayfort.com/Qr/Qr_code_generate/list_data
